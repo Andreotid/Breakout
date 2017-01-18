@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Breakout P4 Raich Mallol</title>
+    <style>
+        #principal{
+            width: 960px;
+            margin: 0 auto;
+        }
+        #joc{
+            position:relative;
+            margin-top: 50px;
+
+        }
+        #game {
+
+            border: #fff 20px solid;
+            border-bottom-width: 0;
+            display: block;
+            margin: auto;
+            width: 500px;
+        }
+        #dades{
+            background-color: #ff8000;
+            display: inline;;
+            padding:10px;
+            font-size:20px;
+            display: block;
+            margin: 0 auto;
+            width: 580px;
+            border-radius:15px;
+        }
+        #win{
+            font-size: 20px;
+            z-index: 100;
+            border-radius: 15px;
+            padding:50px;
+            background-color: #000;
+            left: 40%;
+            top: 30%;
+            position: absolute;
+            text-align: center;
+            color: rgb(59, 247, 3);
+            display:none;
+            border: 1px solid #3BF703;
+        }
+        #completat{
+            font-size: 20px;
+            border-radius: 15px;
+            z-index: 100;
+            padding:50px;
+            left: 34%;
+            top: 30%;
+            position: absolute;
+            text-align: center;
+            background-color: rgb(0, 0, 0);
+            color: rgb(59, 247, 3);
+            display:none;
+            border: 1px solid #3BF703;
+        }
+        #perdut{
+            font-size: 20px;
+            border-radius: 15px;
+            z-index: 100;
+            padding:50px;
+            left: 37%;
+            top: 35%;
+            position: absolute;
+            text-align: center;
+            background-color: rgb(0, 0, 0);
+            color: rgb(247, 1, 0);
+            display:none;
+            border: 1px solid red;
+        }
+        #so{
+            width:25px;
+            height:25px;;
+        }
+        .instruccions{
+            text-align:left;
+            display:inline-block;
+            float:left;
+            color:#fff;
+            width:460px;
+            border: 1px solid #3BF703;
+            padding:10px;
+        }
+        #pause{
+            font-size: 20px;
+            z-index: 100;
+            border-radius: 15px;
+            padding:50px;
+            background-color: #000;
+            left: 45%;
+            top: 50%;
+            position: absolute;
+            text-align: center;
+            color: rgb(59, 247, 3);
+            display:none;
+            border: 1px solid #3BF703;
+        }
+
+    </style>
+</head>
+
+<body background="images/fons1.jpg" >
+
+<div class="instruccions" style="border:none;">
+<div class="instruccions">
+    <b>Instruccions:</b><br>
+    Pas 1: Escriu el teu nom i clica ENTER.<br>
+    Pas 2: Prem SPACE per començar.<br>
+    Pas 3: Mou les fletxes per moure la pala<br>
+    Pas 4: Prova de guanyar al Millor jugador!<br>
+    Vigila! si perds totes les boles, es reinicia el nivell!
+</div>
+<div class="instruccions" style="margin-top:50px; border-color: yellow">
+    <b>Funcionalitats:</b><br>
+    - Si la bola toca un bloc BLANC, surtirà unaltre bola!<br>
+    - Si la bola toca un bloc GROC, accelera la velocitat de la bola durant 5 segons<br>
+    - Si la bola toca un bloc VERD, el radi de la bola augmenta durant 5 segons<br>
+    - Si la bola toca un bloc LILA, l'amplada de la pala disminueix durant 5 segons<br>
+    - Com més amunt estigui el bloc, més punts<br>
+    - Per cada bola que toqui el terra, perdràs una vida i -100 punts.<br>
+    - Prem 'P' per fer pausa.<br>
+    NOTA: El nivell 1  està preparat per veure totes les funcionalitats del joc
+</div>
+</div>
+<div id="principal">
+    <div id="dades">
+        <div id="puntuacio" style="display:inline; padding-right: 100px;"></div>
+        <div id="vida" style="display:inline; padding-right: 100px;"></div>
+        <div id="nivell" style="display:inline-block;padding-right: 10px"></div>
+        <div style="display: inline-block;"><img id="Iup" src="images/up.png"><img id="Idown" src="images/down.png"> </div>
+        <div id="nickName" style="display: inline-block;padding-top:10px;"></div><br>
+        <div id="nickInput" style="padding-top:10px;" >Nick:<input type="text" id="Input" placeholder="Escriu el nick" autofocus></div>
+        <div id="top" style="display: inline-block; padding-right: 30px;padding-top: 10px"></div>
+
+        <audio controls style="display: inline-block; padding-top: 10px; padding-right: 100px;">
+            <source src="sound/song.mp3" type="audio/mpeg" >
+        </audio>
+        Efectes sonors: <img src="images/icoSo.png" id="so" style="padding-left: 10px;">
+    </div>
+
+    <div id="joc">
+        <canvas id="game"></canvas>
+    </div>
+</div>
+<script src="scripts/jquery-1.12.3.min.js"></script>
+<script src="scripts/Breakout.js" defer></script>
+<div id="win">Nivell superat!!!</div>
+<div id="completat">
+</div>
+<div id="perdut">
+</div>
+<div id="pause">Joc en pausa</div>
+
+</body>
+</html>
